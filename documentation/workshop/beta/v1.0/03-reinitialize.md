@@ -61,7 +61,7 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 4. Terraform
     1. Initialization
        ```bash
-       terraform init  --backend-config backend                                         \
+       terraform init  --backend-config backend                                        \
                        ../../../sap-hana/deploy/terraform/run/sap_library/
        ```
        
@@ -107,8 +107,8 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 
 7. Extract Storage Account name
    ```bash
-   egrep -wi 'storage_account_name'                                       \
-     ../../SAP_LIBRARY/NP-EUS2-SAP_LIBRARY/.terraform/terraform.tfstate | \
+   egrep -wi 'storage_account_name'                                                    \
+     ../../SAP_LIBRARY/NP-EUS2-SAP_LIBRARY/.terraform/terraform.tfstate |              \
      sed -e 's/^[ \t]*//' | grep -m 1 -i tfstate
    ```
 
@@ -129,7 +129,7 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 9. Terraform
     1. Initialization
        ```bash
-       terraform init  --backend-config backend                                         \
+       terraform init  --backend-config backend                                        \
                        ../../../sap-hana/deploy/terraform/run/sap_deployer/
        ```
        
@@ -144,7 +144,7 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 
     2. Plan
        ```bash
-       terraform plan  --var-file=NP-EUS2-DEP00-INFRASTRUCTURE.json                     \
+       terraform plan  --var-file=NP-EUS2-DEP00-INFRASTRUCTURE.json                    \
                        ../../../sap-hana/deploy/terraform/run/sap_deployer/
        ```
 

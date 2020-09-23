@@ -119,17 +119,16 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 
     2. Plan
        ```bash
-       terraform plan                                                              \
-                       --var-file=NP-EUS2-DEP00-INFRASTRUCTURE.json                \
-                        ../../../sap-hana/deploy/terraform/bootstrap/sap_deployer/
+       terraform plan  --var-file=NP-EUS2-DEP00-INFRASTRUCTURE.json                    \
+                       ../../../sap-hana/deploy/terraform/bootstrap/sap_deployer/
        ```
 
     3. Apply
        <br/>
        *This step deploys the resources*
        ```bash
-       terraform apply --auto-approve                                              \
-                       --var-file=NP-EUS2-DEP00-INFRASTRUCTURE.json                \
+       terraform apply --auto-approve                                                  \
+                       --var-file=NP-EUS2-DEP00-INFRASTRUCTURE.json                    \
                        ../../../sap-hana/deploy/terraform/bootstrap/sap_deployer/
        ```
 

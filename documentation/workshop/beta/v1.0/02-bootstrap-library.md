@@ -74,8 +74,7 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
        <br/>
        *This step deploys the resources*
        ```bash
-       terraform apply                                                                 \
-                       --auto-approve                                                  \
+       terraform apply --auto-approve                                                  \
                        --var-file=NP-EUS2-SAP_LIBRARY.json                             \
                        ../../../sap-hana/deploy/terraform/bootstrap/sap_library/
        ```
