@@ -14,6 +14,7 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 
 ## Overview
 
+![Block2](assets/Block2.png)
 |                  |              |
 | ---------------- | ------------ |
 | Duration of Task | `12 minutes` |

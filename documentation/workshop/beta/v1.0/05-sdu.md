@@ -20,7 +20,7 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 | ---------------- | ------------ |
 | Duration of Task | `5 minutes`  |
 | Steps            | `6`          |
-| Runtime          | `1 minutes`  |
+| Runtime          | `10 minutes`  |
 
 ---
 
