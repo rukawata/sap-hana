@@ -7,6 +7,7 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 
 ## Table of contents <!-- omit in toc -->
 
+- [Steps](#steps)
 - [Overview](#overview)
 - [Close Up](#close-up)
 - [Deployer](#deployer)
@@ -14,8 +15,20 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 - [SAP Workload VNET](#sap-workload-vnet)
 - [SDU](#sdu)
 
+<br/><br/>
 
-<br>
+## Steps
+1. [Bootstrap - Deployer](01-bootstrap-deployer.md)
+2. [Bootstrap - SAP Library](02-bootstrap-library.md)
+3. [Bootstrap - Reinitialize](03-reinitialize.md)
+4. [Deploy SAP Workload VNET](04-workload-vnet.md)
+5. [Deploy SDU](05-sdu.md)
+
+<br/>
+
+---
+
+<br/>
 
 ## Overview
 ![Overview](assets/BlockOverview.png)
@@ -47,5 +60,6 @@ Environment
 ![Block5]()
 
 <br/><br/><br/><br/>
+
 
 # Next: [SAP Deployment Unit - SDU](01-bootstrap-deployer.md) <!-- omit in toc -->
