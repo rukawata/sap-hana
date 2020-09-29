@@ -59,7 +59,7 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
     ```bash
     cat <<EOF > backend
     resource_group_name   = "NP-EUS2-SAP_LIBRARY"
-    storage_account_name  = "npeus2tfstatec680"
+    storage_account_name  = "npeus2tfstate98a5"
     container_name        = "tfstate"
     key                   = "NP-EUS2-SAP0-X00.terraform.tfstate"
     EOF

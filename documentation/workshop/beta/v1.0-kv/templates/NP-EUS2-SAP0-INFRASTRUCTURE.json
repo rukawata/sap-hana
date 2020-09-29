@@ -1,0 +1,35 @@
+{
+  "infrastructure": {
+    "environment"                         : "GLOBAL",
+    "region"                              : "eastus2",
+    "resource_group": {
+      "name"                              : "GLOBAL-EUS2-SAP0-INFRASTRUCTURE"
+    },
+    "vnets": {
+      "management": {
+        "saplib_resource_group_name"      : "GLOBAL-EUS2-SAP_LIBRARY",
+        "tfstate_storage_account_name"    : "globaeus2tfstate1c46",
+        "deployer_tfstate_key"            : "GLOBAL-EUS2-DEP00-INFRASTRUCTURE.terraform.tfstate"
+      },
+    "sap": {
+      "name"                              : "GLOBAL-EUS2-SAP0-vnet",
+        "address_space"                   : "10.1.0.0/16",
+        "subnet_iscsi": {
+          "name"                          : "GLOBAL-EUS2-SAP0_iscsi-subnet",
+          "prefix"                        : "10.1.0.0/28"
+        }
+      }
+    }
+  },
+  "databases"                             : [ { "platform"         : "NONE" } ],
+  "application"                           :   { "enable_deployment": false  },
+  "software": {
+    "storage_account_sapbits": {
+      "saplib_resource_group_name"        : "GLOBAL-EUS2-SAP_LIBRARY",
+      "tfstate_storage_account_name"      : "globaeus2tfstate1c46",
+      "saplib_tfstate_key"                : "GLOBAL-EUS2-SAP_LIBRARY.terraform.tfstate"
+    }
+  },
+  "sshkey"                                : {},
+  "options"                               : {}
+}

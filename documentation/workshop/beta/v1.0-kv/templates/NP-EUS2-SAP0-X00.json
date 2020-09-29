@@ -1,27 +1,31 @@
 {
   "infrastructure": {
-    "environment"                         : "NP",
+    "environment"                         : "GLOBAL",
     "region"                              : "eastus2",
+    "landscape": {
+      "key_vault_arm_id": "/subscriptions/c4106f40-4f28-442e-b67f-a24d892bf7ad/resourceGroups/GLOBAL-EUS2-SAP0-INFRASTRUCTURE/providers/Microsoft.KeyVault/vaults/GLOBAEUS2SAP0user5FA6",
+      "sid_public_key_secret_name": "GLOBAL-EUS2-SAP0-INFRASTRUCTURE-sid-sshkey-pub"
+    },
     "vnets": {
       "management": {
-        "saplib_resource_group_name"      : "NP-EUS2-SAP_LIBRARY",
-        "tfstate_storage_account_name"    : "npeus2tfstate98a5",
-        "deployer_tfstate_key"            : "NP-EUS2-DEP00-INFRASTRUCTURE.terraform.tfstate"
+        "saplib_resource_group_name"      : "GLOBAL-EUS2-SAP_LIBRARY",
+        "tfstate_storage_account_name"    : "globaeus2tfstate1c46",
+        "deployer_tfstate_key"            : "GLOBAL-EUS2-DEP00-INFRASTRUCTURE.terraform.tfstate"
       },
       "sap": {
         "is_existing"                     : "true",
-        "arm_id"                          : "/subscriptions/49dcf07f-3ea3-40f9-a87a-c75a49c32c5f/resourceGroups/NP-EUS2-SAP0-INFRASTRUCTURE/providers/Microsoft.Network/virtualNetworks/NP-EUS2-SAP0-vnet",
+        "arm_id"                          : "/subscriptions/49dcf07f-3ea3-40f9-a87a-c75a49c32c5f/resourceGroups/GLOBAL-EUS2-SAP0-INFRASTRUCTURE/providers/Microsoft.Network/virtualNetworks/GLOBAL-EUS2-SAP0-vnet",
         "subnet_admin": {
-          "prefix"                        : "10.1.3.64/27"
+          "prefix"                        : "10.1.1.64/27"
         },
         "subnet_db": {
-          "prefix"                        : "10.1.3.0/28"
+          "prefix"                        : "10.1.1.0/28"
         },
         "subnet_app": {
-          "prefix"                        : "10.1.3.32/27"
+          "prefix"                        : "10.1.1.32/27"
         },
         "subnet_web": {
-          "prefix"                        : "10.1.3.96/27"
+          "prefix"                        : "10.1.1.16/28"
         }
       }
     }
@@ -49,7 +53,7 @@
   ],
   "application": {
     "enable_deployment"                   : true,
-    "sid"                                 : "X02",
+    "sid"                                 : "X00",
     "scs_instance_number"                 : "00",
     "ers_instance_number"                 : "10",
     "scs_high_availability"               : false,
@@ -62,9 +66,9 @@
   },
   "software": {
     "storage_account_sapbits": {
-      "saplib_resource_group_name"        : "NP-EUS2-SAP_LIBRARY",
-      "tfstate_storage_account_name"      : "npeus2tfstate98a5",
-      "saplib_tfstate_key"                : "NP-EUS2-SAP_LIBRARY.terraform.tfstate"
+      "saplib_resource_group_name"        : "GLOBAL-EUS2-SAP_LIBRARY",
+      "tfstate_storage_account_name"      : "globaeus2tfstate1c46",
+      "saplib_tfstate_key"                : "GLOBAL-EUS2-SAP_LIBRARY.terraform.tfstate"
 },
     "downloader": {
       "credentials": {
