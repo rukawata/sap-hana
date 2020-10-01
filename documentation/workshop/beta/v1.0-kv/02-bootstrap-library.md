@@ -46,14 +46,14 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 
 2. Create Working Directory.
     ```bash
-    mkdir -p ~/Azure_SAP_Automated_Deployment/WORKSPACES/SAP_LIBRARY/GLOBAL-EUS2-SAP_LIBRARY; cd $_
+    mkdir -p ~/Azure_SAP_Automated_Deployment/WORKSPACES/SAP_LIBRARY/NP-EUS2-SAP_LIBRARY; cd $_
     ```
 
 <br>
 
-3. Create input parameter [JSON](templates/GLOBAL-EUS2-SAP_LIBRARY.json)
+3. Create input parameter [JSON](templates/NP-EUS2-SAP_LIBRARY.json)
     ```bash
-    vi GLOBAL-EUS2-SAP_LIBRARY.json
+    vi NP-EUS2-SAP_LIBRARY.json
     ```
 
 <br>
@@ -67,7 +67,7 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
     2. Plan
        ```bash
        terraform plan                                                                  \
-                       --var-file=GLOBAL-EUS2-SAP_LIBRARY.json                             \
+                       --var-file=NP-EUS2-SAP_LIBRARY.json                             \
                        ../../../sap-hana/deploy/terraform/bootstrap/sap_library
        ```
 
@@ -76,7 +76,7 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
        *This step deploys the resources*
        ```bash
        terraform apply --auto-approve                                                  \
-                       --var-file=GLOBAL-EUS2-SAP_LIBRARY.json                             \
+                       --var-file=NP-EUS2-SAP_LIBRARY.json                             \
                        ../../../sap-hana/deploy/terraform/bootstrap/sap_library/
        ```
 

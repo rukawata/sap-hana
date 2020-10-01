@@ -83,7 +83,7 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 
 5. Create Working Directory.
     ```bash
-    mkdir -p ~/Azure_SAP_Automated_Deployment/WORKSPACES/LOCAL/GLOBAL-EUS2-DEP00-INFRASTRUCTURE; cd $_
+    mkdir -p ~/Azure_SAP_Automated_Deployment/WORKSPACES/LOCAL/NP-EUS2-DEP00-INFRASTRUCTURE; cd $_
     ```
 
 <br/>
@@ -105,9 +105,9 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 
 <br/>
 
-7. Create input parameter [JSON](templates/GLOBAL-EUS2-DEP00-INFRASTRUCTURE.json)
+7. Create input parameter [JSON](templates/NP-EUS2-DEP00-INFRASTRUCTURE.json)
     ```bash
-    vi GLOBAL-EUS2-DEP00-INFRASTRUCTURE.json
+    vi NP-EUS2-DEP00-INFRASTRUCTURE.json
     ```
 
 <br/>
@@ -120,7 +120,7 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 
     2. Plan
        ```bash
-       terraform plan  --var-file=GLOBAL-EUS2-DEP00-INFRASTRUCTURE.json                    \
+       terraform plan  --var-file=NP-EUS2-DEP00-INFRASTRUCTURE.json                    \
                        ../../../sap-hana/deploy/terraform/bootstrap/sap_deployer/
        ```
 
@@ -129,7 +129,7 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
        *This step deploys the resources*
        ```bash
        terraform apply --auto-approve                                                  \
-                       --var-file=GLOBAL-EUS2-DEP00-INFRASTRUCTURE.json                    \
+                       --var-file=NP-EUS2-DEP00-INFRASTRUCTURE.json                    \
                        ../../../sap-hana/deploy/terraform/bootstrap/sap_deployer/
        ```
 

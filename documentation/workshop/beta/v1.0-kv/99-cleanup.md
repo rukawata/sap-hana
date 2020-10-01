@@ -10,25 +10,25 @@
 # Duration of Task      : 12 minutes
 
 
-cd ~/Azure_SAP_Automated_Deployment/WORKSPACES/SAP_SYSTEM/GLOBAL-EUS2-SAP0-X00
+cd ~/Azure_SAP_Automated_Deployment/WORKSPACES/SAP_SYSTEM/NP-EUS2-SAP0-X00
 terraform destroy --auto-approve                                                        \
-                  --var-file=GLOBAL-EUS2-SAP0-X00.json                                      \
+                  --var-file=NP-EUS2-SAP0-X00.json                                      \
                   ../../../sap-hana/deploy/terraform/run/sap_system/
 
 
-cd ~/Azure_SAP_Automated_Deployment/WORKSPACES/SAP_SYSTEM/GLOBAL-EUS2-SAP0-X01
+cd ~/Azure_SAP_Automated_Deployment/WORKSPACES/SAP_SYSTEM/NP-EUS2-SAP0-X01
 terraform destroy --auto-approve                                                        \
-                  --var-file=GLOBAL-EUS2-SAP0-X01.json                                      \
+                  --var-file=NP-EUS2-SAP0-X01.json                                      \
                   ../../../sap-hana/deploy/terraform/run/sap_system/
 
 
-cd ~/Azure_SAP_Automated_Deployment/WORKSPACES/SAP_SYSTEM/GLOBAL-EUS2-SAP0-X02
+cd ~/Azure_SAP_Automated_Deployment/WORKSPACES/SAP_SYSTEM/NP-EUS2-SAP0-X02
 terraform destroy --auto-approve                                                        \
-                  --var-file=GLOBAL-EUS2-SAP0-X02.json                                      \
+                  --var-file=NP-EUS2-SAP0-X02.json                                      \
                   ../../../sap-hana/deploy/terraform/run/sap_system/
 
 
-cd ~/Azure_SAP_Automated_Deployment/WORKSPACES/SAP_LANDSCAPE/GLOBAL-EUS2-SAP0-INFRASTRUCTURE
+cd ~/Azure_SAP_Automated_Deployment/WORKSPACES/SAP_LANDSCAPE/NP-EUS2-SAP0-INFRASTRUCTURE
 terraform destroy --auto-approve                                                        \
-                  --var-file=GLOBAL-EUS2-SAP0-INFRASTRUCTURE.json                           \
+                  --var-file=NP-EUS2-SAP0-INFRASTRUCTURE.json                           \
                   ../../../sap-hana/deploy/terraform/run/sap_system/

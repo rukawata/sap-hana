@@ -34,14 +34,14 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 
 1. Create Working Directory.
     ```bash
-    mkdir -p ~/Azure_SAP_Automated_Deployment/WORKSPACES/SAP_LANDSCAPE/GLOBAL-EUS2-SAP0-INFRASTRUCTURE; cd $_
+    mkdir -p ~/Azure_SAP_Automated_Deployment/WORKSPACES/SAP_LANDSCAPE/NP-EUS2-SAP0-INFRASTRUCTURE; cd $_
     ```
 
 <br>
 
 2. Reuse SSH Keys.
     ```bash
-    cp ../../LOCAL/GLOBAL-EUS2-DEP00-INFRASTRUCTURE/sshkey* .
+    cp ../../LOCAL/NP-EUS2-DEP00-INFRASTRUCTURE/sshkey* .
     ```
 
 <br>
@@ -49,7 +49,7 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 3. Extract Storage Account name
    ```bash
    egrep -wi 'storage_account_name'                                                    \
-     ../../SAP_LIBRARY/GLOBAL-EUS2-SAP_LIBRARY/.terraform/terraform.tfstate |              \
+     ../../SAP_LIBRARY/NP-EUS2-SAP_LIBRARY/.terraform/terraform.tfstate |              \
      sed -e 's/^[ \t]*//' | grep -m 1 -i tfstate
    ```
 
@@ -58,18 +58,18 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 4. Create *backend* parameter file.
     ```bash
     cat <<EOF > backend
-    resource_group_name   = "GLOBAL-EUS2-SAP_LIBRARY"
+    resource_group_name   = "NP-EUS2-SAP_LIBRARY"
     storage_account_name  = "globaeus2tfstate1c46"
     container_name        = "tfstate"
-    key                   = "GLOBAL-EUS2-SAP0-INFRASTRUCTURE.terraform.tfstate"
+    key                   = "NP-EUS2-SAP0-INFRASTRUCTURE.terraform.tfstate"
     EOF
     ```
 
 <br>
 
-5. Create input parameter [JSON](templates/GLOBAL-EUS2-SAP0-INFRASTRUCTURE.json)
+5. Create input parameter [JSON](templates/NP-EUS2-SAP0-INFRASTRUCTURE.json)
     ```bash
-    vi GLOBAL-EUS2-SAP0-INFRASTRUCTURE.json
+    vi NP-EUS2-SAP0-INFRASTRUCTURE.json
     ```
 
 <br>
@@ -83,7 +83,7 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 
     2. Plan
        ```bash
-       terraform plan  --var-file=GLOBAL-EUS2-SAP0-INFRASTRUCTURE.json                     \
+       terraform plan  --var-file=NP-EUS2-SAP0-INFRASTRUCTURE.json                     \
                        ../../../sap-hana/deploy/terraform/run/sap_system/
        ```
 
@@ -91,7 +91,7 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
        <br/>
        ```bash
        terraform apply --auto-approve                                                  \
-                       --var-file=GLOBAL-EUS2-SAP0-INFRASTRUCTURE.json                     \
+                       --var-file=NP-EUS2-SAP0-INFRASTRUCTURE.json                     \
                        ../../../sap-hana/deploy/terraform/run/sap_system/
        ```
 

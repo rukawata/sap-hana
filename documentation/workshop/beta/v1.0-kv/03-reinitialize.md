@@ -34,7 +34,7 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 
 1. Change to Working Directory.
     ```bash
-    cd ~/Azure_SAP_Automated_Deployment/WORKSPACES/SAP_LIBRARY/GLOBAL-EUS2-SAP_LIBRARY
+    cd ~/Azure_SAP_Automated_Deployment/WORKSPACES/SAP_LIBRARY/NP-EUS2-SAP_LIBRARY
     ```
 
 <br/>
@@ -49,10 +49,10 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 3. Create *backend* parameter file.
     ```bash
     cat <<EOF > backend
-    resource_group_name   = "GLOBAL-EUS2-SAP_LIBRARY"
+    resource_group_name   = "NP-EUS2-SAP_LIBRARY"
     storage_account_name  = "globaeus2tfstate1c46"
     container_name        = "tfstate"
-    key                   = "GLOBAL-EUS2-SAP_LIBRARY.terraform.tfstate"
+    key                   = "NP-EUS2-SAP_LIBRARY.terraform.tfstate"
     EOF
     ```
 
@@ -76,7 +76,7 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 
     2. Plan
        ```bash
-       terraform plan  --var-file=GLOBAL-EUS2-SAP_LIBRARY.json                             \
+       terraform plan  --var-file=NP-EUS2-SAP_LIBRARY.json                             \
                        ../../../sap-hana/deploy/terraform/run/sap_library/
        ```
 
@@ -84,7 +84,7 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
        <br/>
        ```bash
        terraform apply --auto-approve                                                  \
-                       --var-file=GLOBAL-EUS2-SAP_LIBRARY.json                             \
+                       --var-file=NP-EUS2-SAP_LIBRARY.json                             \
                        ../../../sap-hana/deploy/terraform/run/sap_library/
        ```
 
@@ -100,7 +100,7 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 
 6. Change to Working Directory.
     ```bash
-    cd ~/Azure_SAP_Automated_Deployment/WORKSPACES/LOCAL/GLOBAL-EUS2-DEP00-INFRASTRUCTURE
+    cd ~/Azure_SAP_Automated_Deployment/WORKSPACES/LOCAL/NP-EUS2-DEP00-INFRASTRUCTURE
     ```
 
 <br/>
@@ -108,7 +108,7 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 7. Extract Storage Account name
    ```bash
    egrep -wi 'storage_account_name'                                                    \
-     ../../SAP_LIBRARY/GLOBAL-EUS2-SAP_LIBRARY/.terraform/terraform.tfstate |              \
+     ../../SAP_LIBRARY/NP-EUS2-SAP_LIBRARY/.terraform/terraform.tfstate |              \
      sed -e 's/^[ \t]*//' | grep -m 1 -i tfstate
    ```
 
@@ -117,10 +117,10 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 8. Create *backend* parameter file.
     ```bash
     cat <<EOF > backend
-    resource_group_name   = "GLOBAL-EUS2-SAP_LIBRARY"
+    resource_group_name   = "NP-EUS2-SAP_LIBRARY"
     storage_account_name  = "globaeus2tfstate1c46"
     container_name        = "tfstate"
-    key                   = "GLOBAL-EUS2-DEP00-INFRASTRUCTURE.terraform.tfstate"
+    key                   = "NP-EUS2-DEP00-INFRASTRUCTURE.terraform.tfstate"
     EOF
     ```
 
@@ -144,7 +144,7 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 
     2. Plan
        ```bash
-       terraform plan  --var-file=GLOBAL-EUS2-DEP00-INFRASTRUCTURE.json                    \
+       terraform plan  --var-file=NP-EUS2-DEP00-INFRASTRUCTURE.json                    \
                        ../../../sap-hana/deploy/terraform/run/sap_deployer/
        ```
 
@@ -152,7 +152,7 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
        <br/>
        ```bash
        terraform apply --auto-approve                                                  \
-                       --var-file=GLOBAL-EUS2-DEP00-INFRASTRUCTURE.json                    \
+                       --var-file=NP-EUS2-DEP00-INFRASTRUCTURE.json                    \
                        ../../../sap-hana/deploy/terraform/run/sap_deployer/
        ```
 

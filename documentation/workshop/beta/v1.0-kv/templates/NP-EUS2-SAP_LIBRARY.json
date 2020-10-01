@@ -1,14 +1,14 @@
 {
   "infrastructure": {
-    "environment"                         : "GLOBAL",
+    "environment"                         : "NP",
     "region"                              : "eastus2"
   },
   "deployer": {
     "resource_group": {
-      "name"                              : "GLOBAL-EUS2-DEP00-INFRASTRUCTURE"
+      "name"                              : "NP-EUS2-DEP00-INFRASTRUCTURE"
     },
     "msi": {
-      "name"                              : "GLOBAL-EUS2-DEP00-msi"
+      "name"                              : "NP-EUS2-DEP00-msi"
     }
   },
   "users": {

@@ -1,6 +1,6 @@
 {
   "infrastructure": {
-    "environment"                         : "GLOBAL",
+    "environment"                         : "NP",
     "region"                              : "eastus2",
     "vnets": {
       "management": {
