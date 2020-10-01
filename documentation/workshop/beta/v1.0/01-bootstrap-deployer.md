@@ -33,10 +33,12 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
    1. Log on to the [Azure Portal](https://portal.azure.com).
    2. Open the cloud shell.
       <br/>![Cloud Shell](assets/CloudShell1.png)
+   3. Be sure that you are using ***Bash*** and not PowerShell.
+      <br/>![Cloud Shell](assets/CloudShell4.png)
 
 <br/>
 
-2. Ensure that you are authenticated with the correct subscription.
+1. Ensure that you are authenticated with the correct subscription.
     ```bash
     az login
     az account list --output=table | grep -i true
