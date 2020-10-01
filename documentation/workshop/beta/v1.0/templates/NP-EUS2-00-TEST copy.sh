@@ -121,7 +121,7 @@ egrep -wi 'resource_group_name|storage_account_name|container_name' terraform.tf
 # terraform {
 #   backend azurerm {
 #     resource_group_name   = "NP-EUS2-SAP_LIBRARY"
-#     storage_account_name  = "npeus2tfstate98a5"
+#     storage_account_name  = "REPLACE_WITH_TFSTATE_STORAGE_ACCOUNT_NAME"
 #     container_name        = "saplibrary"
 #     key                   = "NP-EUS2-SAP_LIBRARY.terraform.tfstate"
 #   }
@@ -131,7 +131,7 @@ egrep -wi 'resource_group_name|storage_account_name|container_name' terraform.tf
 
 terraform init                                                                       \
                --backend-config "resource_group_name=NP-EUS2-SAP_LIBRARY"            \
-               --backend-config "storage_account_name=npeus2tfstate98a5"             \
+               --backend-config "storage_account_name=REPLACE_WITH_TFSTATE_STORAGE_ACCOUNT_NAME"             \
                --backend-config "container_name=tfstate"                             \
                --backend-config "key=NP-EUS2-SAP_LIBRARY.terraform.tfstate"          \
                ../../../sap-hana/deploy/terraform/run/sap_deployer/
@@ -166,7 +166,7 @@ egrep -wi 'resource_group_name|storage_account_name|container_name' ../../SAP_LI
 # terraform {
 #   backend azurerm {
 #     resource_group_name   = "NP-EUS2-SAP_LIBRARY"
-#     storage_account_name  = "npeus2tfstate98a5"
+#     storage_account_name  = "REPLACE_WITH_TFSTATE_STORAGE_ACCOUNT_NAME"
 #     container_name        = "tfstate"
 #     key                   = "NP-EUS2-DEP00-INFRASTRUCTURE.terraform.tfstate"
 #   }
@@ -176,7 +176,7 @@ egrep -wi 'resource_group_name|storage_account_name|container_name' ../../SAP_LI
 
 terraform init                                                                       \
                --backend-config "resource_group_name=NP-EUS2-SAP_LIBRARY"            \
-               --backend-config "storage_account_name=npeus2tfstate98a5"             \
+               --backend-config "storage_account_name=REPLACE_WITH_TFSTATE_STORAGE_ACCOUNT_NAME"             \
                --backend-config "container_name=tfstate"                             \
                --backend-config "key=NP-EUS2-DEP00-INFRASTRUCTURE.terraform.tfstate" \
                ../../../sap-hana/deploy/terraform/run/sap_deployer/
@@ -214,7 +214,7 @@ cp ../../LOCAL/NP-EUS2-DEP00-INFRASTRUCTURE/sshkey* .
 # terraform {
 #   backend azurerm {
 #     resource_group_name   = "NP-EUS2-SAP_LIBRARY"
-#     storage_account_name  = "npeus2tfstate98a5"
+#     storage_account_name  = "REPLACE_WITH_TFSTATE_STORAGE_ACCOUNT_NAME"
 #     container_name        = "tfstate"
 #     key                   = "NP-EUS2-SAP0-INFRASTRUCTURE.terraform.tfstate"
 #   }
@@ -226,7 +226,7 @@ vi NP-EUS2-SAP0-INFRASTRUCTURE.json
 
 terraform init                                                                       \
                 --backend-config "resource_group_name=NP-EUS2-SAP_LIBRARY"           \
-                --backend-config "storage_account_name=npeus2tfstate98a5"            \
+                --backend-config "storage_account_name=REPLACE_WITH_TFSTATE_STORAGE_ACCOUNT_NAME"            \
                 --backend-config "container_name=tfstate"                            \
                 --backend-config "key=NP-EUS2-SAP0-INFRASTRUCTURE.terraform.tfstate" \
                 ../../../sap-hana/deploy/terraform/run/sap_system/
@@ -262,7 +262,7 @@ cp ../../LOCAL/NP-EUS2-DEP00-INFRASTRUCTURE/sshkey* .
 # terraform {
 #   backend azurerm {
 #     resource_group_name   = "NP-EUS2-SAP_LIBRARY"
-#     storage_account_name  = "npeus2tfstate98a5"
+#     storage_account_name  = "REPLACE_WITH_TFSTATE_STORAGE_ACCOUNT_NAME"
 #     container_name        = "tfstate"
 #     key                   = "NP-EUS2-SAP0-X00.terraform.tfstate"
 #   }
@@ -274,7 +274,7 @@ vi NP-EUS2-SAP0-X00.json
 
 cat <<EOF > backend
 resource_group_name   = "NP-EUS2-SAP_LIBRARY"
-storage_account_name  = "npeus2tfstate98a5"
+storage_account_name  = "REPLACE_WITH_TFSTATE_STORAGE_ACCOUNT_NAME"
 container_name        = "tfstate"
 key                   = "NP-EUS2-SAP0-X00.terraform.tfstate"
 EOF
@@ -287,7 +287,7 @@ terraform init                                                                  
 
 # terraform init                                                                       \
 #                 --backend-config "resource_group_name=NP-EUS2-SAP_LIBRARY"           \
-#                 --backend-config "storage_account_name=npeus2tfstate98a5"            \
+#                 --backend-config "storage_account_name=REPLACE_WITH_TFSTATE_STORAGE_ACCOUNT_NAME"            \
 #                 --backend-config "container_name=tfstate"                            \
 #                 --backend-config "key=NP-EUS2-SAP0-X00.terraform.tfstate"            \
 #                 ../../../sap-hana/deploy/terraform/run/sap_system/
@@ -323,7 +323,7 @@ vi NP-EUS2-SAP0-X01.json
 
 cat <<EOF > backend
 resource_group_name   = "NP-EUS2-SAP_LIBRARY"
-storage_account_name  = "npeus2tfstate98a5"
+storage_account_name  = "REPLACE_WITH_TFSTATE_STORAGE_ACCOUNT_NAME"
 container_name        = "tfstate"
 key                   = "NP-EUS2-SAP0-X01.terraform.tfstate"
 EOF
@@ -364,7 +364,7 @@ vi NP-EUS2-SAP0-X02.json
 
 cat <<EOF > backend
 resource_group_name   = "NP-EUS2-SAP_LIBRARY"
-storage_account_name  = "npeus2tfstate98a5"
+storage_account_name  = "REPLACE_WITH_TFSTATE_STORAGE_ACCOUNT_NAME"
 container_name        = "tfstate"
 key                   = "NP-EUS2-SAP0-X02.terraform.tfstate"
 EOF

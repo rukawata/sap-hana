@@ -8,7 +8,7 @@
     "vnets": {
       "management": {
         "saplib_resource_group_name"      : "NP-EUS2-SAP_LIBRARY",
-        "tfstate_storage_account_name"    : "npeus2tfstate98a5",
+        "tfstate_storage_account_name"    : "REPLACE_WITH_TFSTATE_STORAGE_ACCOUNT_NAME",
         "deployer_tfstate_key"            : "NP-EUS2-DEP00-INFRASTRUCTURE.terraform.tfstate"
       },
     "sap": {
@@ -26,7 +26,7 @@
   "software": {
     "storage_account_sapbits": {
       "saplib_resource_group_name"        : "NP-EUS2-SAP_LIBRARY",
-      "tfstate_storage_account_name"      : "npeus2tfstate98a5",
+      "tfstate_storage_account_name"      : "REPLACE_WITH_TFSTATE_STORAGE_ACCOUNT_NAME",
       "saplib_tfstate_key"                : "NP-EUS2-SAP_LIBRARY.terraform.tfstate"
     }
   },

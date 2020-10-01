@@ -47,10 +47,11 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 <br/>
 
 3. Create *backend* parameter file.
+   <br/>Update with Storage Account name for TFSTATE, identified in previous step.
     ```bash
     cat <<EOF > backend
     resource_group_name   = "NP-EUS2-SAP_LIBRARY"
-    storage_account_name  = "npeus2tfstate98a5"
+    storage_account_name  = "REPLACE_WITH_TFSTATE_STORAGE_ACCOUNT_NAME"
     container_name        = "tfstate"
     key                   = "NP-EUS2-SAP_LIBRARY.terraform.tfstate"
     EOF
@@ -115,10 +116,11 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 <br>
 
 8. Create *backend* parameter file.
+   <br/>Update with Storage Account name for TFSTATE, identified in previous step.
     ```bash
     cat <<EOF > backend
     resource_group_name   = "NP-EUS2-SAP_LIBRARY"
-    storage_account_name  = "npeus2tfstate98a5"
+    storage_account_name  = "REPLACE_WITH_TFSTATE_STORAGE_ACCOUNT_NAME"
     container_name        = "tfstate"
     key                   = "NP-EUS2-DEP00-INFRASTRUCTURE.terraform.tfstate"
     EOF
