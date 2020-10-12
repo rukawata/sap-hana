@@ -4,16 +4,8 @@
     "region"                              : "eastus2"
   },
   "deployer": {
-    "resource_group": {
-      "name"                              : "NP-EUS2-DEP00-INFRASTRUCTURE"
-    },
-    "msi": {
-      "name"                              : "NP-EUS2-DEP00-msi"
-    }
-  },
-  "users": {
-    "object_id": [
-      "ad7e0104-fa9f-4946-8f13-1a533af59ad4"
-    ]
+    "environment"                         : "NP",
+    "region"                              : "eastus2",
+    "vnet"                                : "DEP00"
   }
 }
