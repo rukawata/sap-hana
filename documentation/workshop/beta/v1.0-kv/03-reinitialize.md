@@ -9,8 +9,8 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 
 - [Overview](#overview)
 - [Procedure](#procedure)
-  - [SAP Library](#sap-library)
   - [Deployer](#deployer)
+  - [SAP Library](#sap-library)
 
 <br>
 
@@ -27,72 +27,6 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 <br/><br/>
 
 ## Procedure
-
-### SAP Library
-
-<br/>
-
-1. Change to Working Directory.
-    ```bash
-    cd ~/Azure_SAP_Automated_Deployment/WORKSPACES/SAP_LIBRARY/NP-EUS2-SAP_LIBRARY
-    ```
-
-<br/>
-
-2. Extract Storage Account name
-   ```bash
-   egrep -wi 'storage_account_name' terraform.tfstate | sed -e 's/^[ \t]*//' | grep -m 1 -i tfstate
-   ```
-
-<br/>
-
-3. Create *backend* parameter file.
-    ```bash
-    cat <<EOF > backend
-    resource_group_name   = "NP-EUS2-SAP_LIBRARY"
-    storage_account_name  = "globaeus2tfstate1c46"
-    container_name        = "tfstate"
-    key                   = "NP-EUS2-SAP_LIBRARY.terraform.tfstate"
-    EOF
-    ```
-
-<br/>
-
-4. Terraform
-    1. Initialization
-       ```bash
-       terraform init  --backend-config backend                                        \
-                       ../../../sap-hana/deploy/terraform/run/sap_library/
-       ```
-       
-       Respond ***yes*** to the following:
-       <br/><br/>![IMAGE](assets/Reinitialize1.png)
-
-       ...And remove the local State File.
-
-       ```bash
-       rm terraform.tfstate*
-       ```
-
-    2. Plan
-       ```bash
-       terraform plan  --var-file=NP-EUS2-SAP_LIBRARY.json                             \
-                       ../../../sap-hana/deploy/terraform/run/sap_library/
-       ```
-
-    3. Apply
-       <br/>
-       ```bash
-       terraform apply --auto-approve                                                  \
-                       --var-file=NP-EUS2-SAP_LIBRARY.json                             \
-                       ../../../sap-hana/deploy/terraform/run/sap_library/
-       ```
-
-<br/><br/>
-
----
-
-<br/><br/>
 
 ### Deployer
 
@@ -156,8 +90,71 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
                        ../../../sap-hana/deploy/terraform/run/sap_deployer/
        ```
 
+<br/><br/>
+
+---
+
+<br/><br/>
+
+### SAP Library
+
 <br/>
 
+1. Change to Working Directory.
+    ```bash
+    cd ~/Azure_SAP_Automated_Deployment/WORKSPACES/SAP_LIBRARY/NP-EUS2-SAP_LIBRARY
+    ```
+
+<br/>
+
+2. Extract Storage Account name
+   ```bash
+   egrep -wi 'storage_account_name' terraform.tfstate | sed -e 's/^[ \t]*//' | grep -m 1 -i tfstate
+   ```
+
+<br/>
+
+3. Create *backend* parameter file.
+    ```bash
+    cat <<EOF > backend
+    resource_group_name   = "NP-EUS2-SAP_LIBRARY"
+    storage_account_name  = "globaeus2tfstate1c46"
+    container_name        = "tfstate"
+    key                   = "NP-EUS2-SAP_LIBRARY.terraform.tfstate"
+    EOF
+    ```
+
+<br/>
+
+4. Terraform
+    1. Initialization
+       ```bash
+       terraform init  --backend-config backend                                        \
+                       ../../../sap-hana/deploy/terraform/run/sap_library/
+       ```
+       
+       Respond ***yes*** to the following:
+       <br/><br/>![IMAGE](assets/Reinitialize1.png)
+
+       ...And remove the local State File.
+
+       ```bash
+       rm terraform.tfstate*
+       ```
+
+    2. Plan
+       ```bash
+       terraform plan  --var-file=NP-EUS2-SAP_LIBRARY.json                             \
+                       ../../../sap-hana/deploy/terraform/run/sap_library/
+       ```
+
+    3. Apply
+       <br/>
+       ```bash
+       terraform apply --auto-approve                                                  \
+                       --var-file=NP-EUS2-SAP_LIBRARY.json                             \
+                       ../../../sap-hana/deploy/terraform/run/sap_library/
+       ```
 
 <br/><br/><br/><br/>
 
