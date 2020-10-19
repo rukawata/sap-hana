@@ -1,0 +1,24 @@
+
+
+az ad sp create-for-rbac --name "NPTERSPN" --role="Contributor" --scopes="/subscriptions/xxxxxxxxx"
+
+
+az keyvault secret set --name "NP-subscription-id" --vault-name "NPEUS2DEP00user76B" --value "";
+az keyvault secret set --name "NP-client-id" --vault-name "NPEUS2DEP00user76B" --value "";
+az keyvault secret set --name "NP-client-secret" --vault-name "NPEUS2DEP00user76B" --value "";
+az keyvault secret set --name "NP-tenant-id" --vault-name "NPEUS2DEP00user76B" --value "";
+
+
+
+
+cat <<EOF > backend
+resource_group_name   = "NP-EUS2-SAP_LIBRARY"
+storage_account_name  = "npeus2tfstatead9d"
+container_name        = "tfstate"
+key                   = "NP-EUS2-SAP0-INFRASTRUCTURE.terraform.tfstate"
+EOF
+
+
+
+
+
