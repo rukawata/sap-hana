@@ -34,10 +34,10 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
     1. Checkout Branch
         ```bash
         cd  ~/Azure_SAP_Automated_Deployment/sap-hana
-        git checkout beta/v1.0
+        git checkout yunzzha_spn
         ```
 
-    2. Verify Branch is at expected Revision: `58676615fcf5678a187d599629a9c7c6b121a966`
+    2. Verify Branch is at expected Revision: `71a7379a57994144268dad3a08c200f0dadb0572`
         ```bash
         git rev-parse HEAD
         ```

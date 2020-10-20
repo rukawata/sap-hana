@@ -71,10 +71,10 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 
     2. Checkout Branch
         ```bash
-        git checkout beta/v1.0
+        git checkout yunzzha_spn
         ```
 
-    3. Verify Branch is at expected Revision: `58676615fcf5678a187d599629a9c7c6b121a966`
+    3. Verify Branch is at expected Revision: `71a7379a57994144268dad3a08c200f0dadb0572`
         ```bash
         git rev-parse HEAD
         ```
@@ -88,7 +88,8 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 
 <br/>
 
-6. SSH Keys: Chose One
+
+6. <s>SSH Keys: Chose One
 
    Create
     ```bash
@@ -102,7 +103,7 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
     mv ~/sshkey* .
     chmod 600 sshkey
     ```
-
+</s>
 <br/>
 
 7. Create input parameter [JSON](templates/NP-EUS2-DEP00-INFRASTRUCTURE.json)
@@ -136,17 +137,46 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 <br/>
 
 9. Post Processing
-    1. Post Processing.
+    1. In Output Section make note of the following 
+       1. deployer_public_ip_address
+       2. deployer_kv_user_name
+       3. deployer_kv_prvt_name
+       4. deployer_public_key_secret_name
+       5. deployer_private_key_secret_name
+      
+        <br/>![Outputs](assets/Outputs-Deployer.png)
+        <br/><br/>
+
+    2. Post Processing.
        ```bash
        ./post_deployment.sh
        ```
        <br/>
 
-    2. Note the IP address of the VM.
-       <br/>![IP Address](assets/CloudShell3.png)
+    3. <s>Note the IP address of the VM.
+       <!-- <br/>![IP Address](assets/CloudShell3.png) -->
+       </s><br/><br/>
+
+    4. Extract SSH Keys
+       1. Private Key
+          ```
+          az keyvault secret show            \
+            --vault-name NPEUS2DEP00userF6A \
+            --name NP-EUS2-DEP00-sshkey   | \
+            jq -r .value > sshkey
+          ```
+       <br/>
+
+       2. Public Key
+          ```
+          az keyvault secret show               \
+            --vault-name NPEUS2DEP00userF6A     \
+            --name NP-EUS2-DEP00-sshkey-pub   | \
+            jq -r .value > sshkey.pub
+          ```
        <br/><br/>
 
-    3. Download the Private/Public Key Pair for use in your SSH Terminal Application
+    5. Download the Private/Public Key Pair for use in your SSH Terminal Application
        <br/>![Download File](assets/CloudShell2.png)
        <br/><br/><br/><br/>
 

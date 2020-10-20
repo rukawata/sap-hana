@@ -32,14 +32,14 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 
 <br/>
 
-6. Change to Working Directory.
+1. Change to Working Directory.
     ```bash
     cd ~/Azure_SAP_Automated_Deployment/WORKSPACES/LOCAL/NP-EUS2-DEP00-INFRASTRUCTURE
     ```
 
 <br/>
 
-7. Extract Storage Account name
+2. Extract Storage Account name
    ```bash
    egrep -wi 'storage_account_name'                                                    \
      ../../SAP_LIBRARY/NP-EUS2-SAP_LIBRARY/.terraform/terraform.tfstate |              \
@@ -48,7 +48,7 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 
 <br>
 
-8. Create *backend* parameter file.
+3. Create *backend* parameter file.
     ```bash
     cat <<EOF > backend
     resource_group_name   = "NP-EUS2-SAP_LIBRARY"
@@ -60,7 +60,7 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 
 <br>
 
-9. Terraform
+4. Terraform
     1. Initialization
        ```bash
        terraform init  --backend-config backend                                        \
