@@ -1,5 +1,5 @@
-### <img src="../../../../documentation/assets/UnicornSAPBlack256x256.png" width="64px"> SAP Automation > V1.x.x <!-- omit in toc -->
-# SDU - SAP Deployment Unit <!-- omit in toc -->
+### <img src="../../../../documentation/SAP_Automation_on_Azure/assets/images/UnicornSAPBlack256x256.png" width="64px"> SAP Automation > V1.x.x <!-- omit in toc -->
+# Logical SAP Workload VNET <!-- omit in toc -->
 
 Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azure-SAP-HANA/_apis/build/status/Azure.sap-hana?branchName=master&api-version=5.1-preview.1)](https://dev.azure.com/azuresaphana/Azure-SAP-HANA/_build/latest?definitionId=6&branchName=master)
 
@@ -9,18 +9,18 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 
 - [Overview](#overview)
 - [Procedure](#procedure)
-  - [SDU - SAP Deployment Unit](#sdu---sap-deployment-unit)
-
+  - [Logical SAP Workload VNET](#logical-sap-workload-vnet)
 
 <br>
 
 ## Overview
 
+![Block4](assets/Block4.png)
 |                  |              |
 | ---------------- | ------------ |
 | Duration of Task | `5 minutes`  |
 | Steps            | `6`          |
-| Runtime          | `10 minutes`  |
+| Runtime          | `1 minutes`  |
 
 ---
 
@@ -28,30 +28,32 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 
 ## Procedure
 
-### SDU - SAP Deployment Unit
+### Logical SAP Workload VNET
 
 <br/>
 
 1. Create Working Directory.
     ```bash
-    mkdir -p ~/Azure_SAP_Automated_Deployment/WORKSPACES/SAP_SYSTEM/NP-EUS2-SAP0-X00; cd $_
+    mkdir -p ~/Azure_SAP_Automated_Deployment/WORKSPACES/SAP_LANDSCAPE/NP-EUS2-SAP0-INFRASTRUCTURE; cd $_
     ```
 
 <br>
 
-2. Reuse SSH Keys.
+2. <s>Reuse SSH Keys.
     ```bash
     cp ../../LOCAL/NP-EUS2-DEP00-INFRASTRUCTURE/sshkey* .
     ```
+</s>
 
 <br>
 
-3. Extract Storage Account name
+3. <s>Extract Storage Account name
    ```bash
    egrep -wi 'storage_account_name'                                                    \
      ../../SAP_LIBRARY/NP-EUS2-SAP_LIBRARY/.terraform/terraform.tfstate |              \
      sed -e 's/^[ \t]*//' | grep -m 1 -i tfstate
    ```
+   </s>
 
 <br>
 
@@ -61,15 +63,15 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
     resource_group_name   = "NP-EUS2-SAP_LIBRARY"
     storage_account_name  = "globaeus2tfstate1c46"
     container_name        = "tfstate"
-    key                   = "NP-EUS2-SAP0-X00.terraform.tfstate"
+    key                   = "NP-EUS2-SAP0-INFRASTRUCTURE.terraform.tfstate"
     EOF
     ```
 
 <br>
 
-1. Create input parameter [JSON](templates/NP-EUS2-SAP0-X00.json)
+5. Create input parameter [JSON](templates/NP-EUS2-SAP0-INFRASTRUCTURE.json)
     ```bash
-    vi NP-EUS2-SAP0-X00.json
+    vi NP-EUS2-SAP0-INFRASTRUCTURE.json
     ```
 
 <br>
@@ -83,7 +85,7 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 
     2. Plan
        ```bash
-       terraform plan  --var-file=NP-EUS2-SAP0-X00.json                                \
+       terraform plan  --var-file=NP-EUS2-SAP0-INFRASTRUCTURE.json                     \
                        ../../../sap-hana/deploy/terraform/run/sap_system/
        ```
 
@@ -91,7 +93,7 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
        <br/>
        ```bash
        terraform apply --auto-approve                                                  \
-                       --var-file=NP-EUS2-SAP0-X00.json                                \
+                       --var-file=NP-EUS2-SAP0-INFRASTRUCTURE.json                     \
                        ../../../sap-hana/deploy/terraform/run/sap_system/
        ```
 
@@ -99,3 +101,5 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 
 
 <br/><br/><br/><br/>
+
+# Next: [SAP Deployment Unit - SDU](06-sdu.md) <!-- omit in toc -->

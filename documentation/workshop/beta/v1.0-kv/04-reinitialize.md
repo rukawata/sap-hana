@@ -1,4 +1,4 @@
-### <img src="../../../../documentation/assets/UnicornSAPBlack256x256.png" width="64px"> SAP Automation > V1.x.x <!-- omit in toc -->
+### <img src="../../../../documentation/SAP_Automation_on_Azure/assets/images/UnicornSAPBlack256x256.png" width="64px"> SAP Automation > V1.x.x <!-- omit in toc -->
 # Bootstrap - Reinitialization <!-- omit in toc -->
 
 Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azure-SAP-HANA/_apis/build/status/Azure.sap-hana?branchName=master&api-version=5.1-preview.1)](https://dev.azure.com/azuresaphana/Azure-SAP-HANA/_build/latest?definitionId=6&branchName=master)
@@ -126,7 +126,10 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 
 <br/>
 
-4. Terraform
+4. "tfstate_resource_id": "/subscriptions/c4106f40-4f28-442e-b67f-a24d892bf7ad/resourceGroups/NP-EAUS-SAP_LIBRARY/providers/Microsoft.Storage/storageAccounts/npeaustfstate22de"
+
+
+5. Terraform
     1. Initialization
        ```bash
        terraform init  --backend-config backend                                        \
@@ -158,4 +161,4 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 
 <br/><br/><br/><br/>
 
-# Next: [SAP Workload VNET](04-workload-vnet.md) <!-- omit in toc -->
+# Next: [SAP Workload VNET](05-workload-vnet.md) <!-- omit in toc -->

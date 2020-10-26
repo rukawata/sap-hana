@@ -1,4 +1,4 @@
-### <img src="../../../../documentation/assets/UnicornSAPBlack256x256.png" width="64px"> SAP Automation > V1.x.x <!-- omit in toc -->
+### <img src="../../../../documentation/SAP_Automation_on_Azure/assets/images/UnicornSAPBlack256x256.png" width="64px"> SAP Automation > V1.x.x <!-- omit in toc -->
 # Bootstrapping the Deployer <!-- omit in toc -->
 
 Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azure-SAP-HANA/_apis/build/status/Azure.sap-hana?branchName=master&api-version=5.1-preview.1)](https://dev.azure.com/azuresaphana/Azure-SAP-HANA/_build/latest?definitionId=6&branchName=master)
@@ -71,10 +71,10 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 
     2. Checkout Branch
         ```bash
-        git checkout yunzzha_spn
+        git checkout feature/keyvault
         ```
 
-    3. Verify Branch is at expected Revision: `71a7379a57994144268dad3a08c200f0dadb0572`
+    3. Verify Branch is at expected Revision: `173b8b522e4e5b932a614cf13a20a07e859e4329`
         ```bash
         git rev-parse HEAD
         ```
@@ -181,4 +181,4 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
        <br/><br/><br/><br/>
 
 
-# Next: [Bootstrap - Library](02-bootstrap-library.md) <!-- omit in toc -->
+# Next: [Bootstrap - SPN](02-spn.md) <!-- omit in toc -->

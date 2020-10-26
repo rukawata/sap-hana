@@ -1,4 +1,4 @@
-### <img src="../../../../documentation/assets/UnicornSAPBlack256x256.png" width="64px"> SAP Automation > V1.x.x <!-- omit in toc -->
+### <img src="../../../../documentation/SAP_Automation_on_Azure/assets/images/UnicornSAPBlack256x256.png" width="64px"> SAP Automation > V1.x.x <!-- omit in toc -->
 # Bootstrap - SAP Library <!-- omit in toc -->
 
 Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azure-SAP-HANA/_apis/build/status/Azure.sap-hana?branchName=master&api-version=5.1-preview.1)](https://dev.azure.com/azuresaphana/Azure-SAP-HANA/_build/latest?definitionId=6&branchName=master)
@@ -34,10 +34,10 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
     1. Checkout Branch
         ```bash
         cd  ~/Azure_SAP_Automated_Deployment/sap-hana
-        git checkout yunzzha_spn
+        git checkout feature/keyvault
         ```
 
-    2. Verify Branch is at expected Revision: `71a7379a57994144268dad3a08c200f0dadb0572`
+    2. Verify Branch is at expected Revision: `173b8b522e4e5b932a614cf13a20a07e859e4329`
         ```bash
         git rev-parse HEAD
         ```
@@ -82,11 +82,12 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 
 <br/>
 
-5. Extract Storage Account name
+5. <s>Extract Storage Account name
    ```bash
    egrep -wi 'storage_account_name' terraform.tfstate | sed -e 's/^[ \t]*//' | grep -m 1 -i tfstate
    ```
+</s>
 
 <br/><br/><br/><br/>
 
-# Next: [Reinitialize](03-reinitialize.md) <!-- omit in toc -->
+# Next: [Reinitialize](04-reinitialize.md) <!-- omit in toc -->

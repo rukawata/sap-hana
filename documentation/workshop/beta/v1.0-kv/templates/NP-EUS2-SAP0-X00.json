@@ -3,13 +3,12 @@
     "environment"                         : "NP",
     "region"                              : "eastus2",
     "landscape": {
-      "key_vault_arm_id": "/subscriptions/c4106f40-4f28-442e-b67f-a24d892bf7ad/resourceGroups/NP-EUS2-SAP0-INFRASTRUCTURE/providers/Microsoft.KeyVault/vaults/GLOBAEUS2SAP0user5FA6",
-      "sid_public_key_secret_name": "NP-EUS2-SAP0-INFRASTRUCTURE-sid-sshkey-pub"
+      "key_vault_arm_id"                  : "<CHANGE_THIS_TO_THE_USER_KV_OF_THE_LANDSCAPE>",
+      "sid_public_key_secret_name"        : "NP-EUS2-SAP0-INFRASTRUCTURE-sid-sshkey-pub"
     },
     "vnets": {
       "management": {
-        "saplib_resource_group_name"      : "NP-EUS2-SAP_LIBRARY",
-        "tfstate_storage_account_name"    : "npeus2tfstate1c46",
+        "tfstate_resource_id"             : "<TFSTATE_ARM_ID>",
         "deployer_tfstate_key"            : "NP-EUS2-DEP00-INFRASTRUCTURE.terraform.tfstate"
       },
       "sap": {
@@ -36,18 +35,10 @@
       "high_availability"                 : false,
       "db_version"                        : "2.00.050",
       "size"                              : "Demo",
-      "os": { 
+      "os": {
         "publisher"                       : "SUSE",
         "offer"                           : "sles-sap-12-sp5",
         "sku"                             : "gen1"
-      }, 
-      "credentials": {
-        "db_systemdb_password"            : "<db_systemdb_password>",
-        "os_sidadm_password"              : "<os_sidadm_password>",
-        "os_sapadm_password"              : "<os_sapadm_password>",
-        "xsa_admin_password"              : "<xsa_admin_password>",
-        "cockpit_admin_password"          : "<cockpit_admin_password>",
-        "ha_cluster_password"             : "<ha_cluster_password>"
       }
     }
   ],
@@ -63,23 +54,6 @@
       "type"                              : "key",
       "username"                          : "azureadm"
     }
-  },
-  "software": {
-    "storage_account_sapbits": {
-      "saplib_resource_group_name"        : "NP-EUS2-SAP_LIBRARY",
-      "tfstate_storage_account_name"      : "globaeus2tfstate1c46",
-      "saplib_tfstate_key"                : "NP-EUS2-SAP_LIBRARY.terraform.tfstate"
-},
-    "downloader": {
-      "credentials": {
-        "sap_user"                        : "<sap_user>",
-        "sap_password"                    : "<sap_password>"
-      }
-    }
-  },
-  "sshkey": {
-    "path_to_public_key"                  : "sshkey.pub",
-    "path_to_private_key"                 : "sshkey"
   },
   "options": {
     "enable_secure_transfer"              : true,
