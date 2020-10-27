@@ -39,16 +39,7 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 
 <br/>
 
-2. Extract Storage Account name
-   ```bash
-   egrep -wi 'storage_account_name'                                                    \
-     ../../SAP_LIBRARY/NP-EUS2-SAP_LIBRARY/.terraform/terraform.tfstate |              \
-     sed -e 's/^[ \t]*//' | grep -m 1 -i tfstate
-   ```
-
-<br>
-
-3. Create *backend* parameter file.
+2. Create *backend* parameter file.
     ```bash
     cat <<EOF > backend
     resource_group_name   = "NP-EUS2-SAP_LIBRARY"
@@ -60,7 +51,7 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 
 <br>
 
-4. Terraform
+3. Terraform
     1. Initialization
        ```bash
        terraform init  --backend-config backend                                        \
@@ -107,14 +98,7 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 
 <br/>
 
-2. Extract Storage Account name
-   ```bash
-   egrep -wi 'storage_account_name' terraform.tfstate | sed -e 's/^[ \t]*//' | grep -m 1 -i tfstate
-   ```
-
-<br/>
-
-3. Create *backend* parameter file.
+2. Create *backend* parameter file.
     ```bash
     cat <<EOF > backend
     resource_group_name   = "NP-EUS2-SAP_LIBRARY"
@@ -126,10 +110,17 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 
 <br/>
 
-4. "tfstate_resource_id": "/subscriptions/c4106f40-4f28-442e-b67f-a24d892bf7ad/resourceGroups/NP-EAUS-SAP_LIBRARY/providers/Microsoft.Storage/storageAccounts/npeaustfstate22de"
+3. Add Key/Pair `tfstate_resource_id` to the input JSON
 
+    ```
+    {
+        "tfstate_resource_id": "/subscriptions/<subscription_id>/resourceGroups/<Resource_Group_name>/providers/Microsoft.Storage/storageAccounts/<tfstate_storge_account_name>",
+        "infrastructure": {
+            ...
+    }
+    ```
 
-5. Terraform
+4. Terraform
     1. Initialization
        ```bash
        terraform init  --backend-config backend                                        \

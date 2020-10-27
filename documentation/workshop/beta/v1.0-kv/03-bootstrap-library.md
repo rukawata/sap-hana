@@ -80,14 +80,6 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
                        ../../../sap-hana/deploy/terraform/bootstrap/sap_library/
        ```
 
-<br/>
-
-5. <s>Extract Storage Account name
-   ```bash
-   egrep -wi 'storage_account_name' terraform.tfstate | sed -e 's/^[ \t]*//' | grep -m 1 -i tfstate
-   ```
-</s>
-
 <br/><br/><br/><br/>
 
 # Next: [Reinitialize](04-reinitialize.md) <!-- omit in toc -->

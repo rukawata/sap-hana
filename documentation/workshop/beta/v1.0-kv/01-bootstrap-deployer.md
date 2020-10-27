@@ -88,32 +88,14 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 
 <br/>
 
-
-6. <s>SSH Keys: Chose One
-
-   Create
-    ```bash
-    ssh-keygen -q -t rsa -C "Deploy Platform" -f sshkey
-    <return>
-    <return>
-    ```
-    
-    Upload using the Cloud Shell [GRAPHIC]
-    ```bash
-    mv ~/sshkey* .
-    chmod 600 sshkey
-    ```
-</s>
-<br/>
-
-7. Create input parameter [JSON](templates/NP-EUS2-DEP00-INFRASTRUCTURE.json)
+6. Create input parameter [JSON](templates/NP-EUS2-DEP00-INFRASTRUCTURE.json)
     ```bash
     vi NP-EUS2-DEP00-INFRASTRUCTURE.json
     ```
 
 <br/>
 
-8. Terraform
+7. Terraform
     1. Initialization
        ```bash
        terraform init  ../../../sap-hana/deploy/terraform/bootstrap/sap_deployer/
@@ -136,7 +118,7 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 
 <br/>
 
-9. Post Processing
+8. Post Processing
     1. In Output Section make note of the following 
        1. deployer_public_ip_address
        2. deployer_kv_user_name
@@ -153,11 +135,7 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
        ```
        <br/>
 
-    3. <s>Note the IP address of the VM.
-       <!-- <br/>![IP Address](assets/CloudShell3.png) -->
-       </s><br/><br/>
-
-    4. Extract SSH Keys
+    3. Extract SSH Keys
        1. Private Key
           ```
           az keyvault secret show            \
@@ -167,7 +145,7 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
           ```
        <br/>
 
-       2. Public Key
+       1. Public Key
           ```
           az keyvault secret show               \
             --vault-name NPEUS2DEP00userF6A     \
@@ -176,7 +154,7 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
           ```
        <br/><br/>
 
-    5. Download the Private/Public Key Pair for use in your SSH Terminal Application
+    4. Download the Private/Public Key Pair for use in your SSH Terminal Application
        <br/>![Download File](assets/CloudShell2.png)
        <br/><br/><br/><br/>
 
