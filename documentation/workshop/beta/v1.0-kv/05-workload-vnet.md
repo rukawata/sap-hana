@@ -39,29 +39,11 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 
 <br>
 
-2. <s>Reuse SSH Keys.
-    ```bash
-    cp ../../LOCAL/NP-EUS2-DEP00-INFRASTRUCTURE/sshkey* .
-    ```
-</s>
-
-<br>
-
-3. <s>Extract Storage Account name
-   ```bash
-   egrep -wi 'storage_account_name'                                                    \
-     ../../SAP_LIBRARY/NP-EUS2-SAP_LIBRARY/.terraform/terraform.tfstate |              \
-     sed -e 's/^[ \t]*//' | grep -m 1 -i tfstate
-   ```
-   </s>
-
-<br>
-
-4. Create *backend* parameter file.
+2. Create *backend* parameter file.
     ```bash
     cat <<EOF > backend
     resource_group_name   = "NP-EUS2-SAP_LIBRARY"
-    storage_account_name  = "globaeus2tfstate1c46"
+    storage_account_name  = "<tfstate_storage_account_name>"
     container_name        = "tfstate"
     key                   = "NP-EUS2-SAP0-INFRASTRUCTURE.terraform.tfstate"
     EOF
@@ -69,14 +51,14 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
 
 <br>
 
-5. Create input parameter [JSON](templates/NP-EUS2-SAP0-INFRASTRUCTURE.json)
+3. Create input parameter [JSON](templates/NP-EUS2-SAP0-INFRASTRUCTURE.json)
     ```bash
     vi NP-EUS2-SAP0-INFRASTRUCTURE.json
     ```
 
 <br>
 
-6. Terraform
+4. Terraform
     1. Initialization
        ```bash
        terraform init  --backend-config backend                                        \

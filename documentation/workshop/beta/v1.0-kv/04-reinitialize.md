@@ -43,7 +43,7 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
     ```bash
     cat <<EOF > backend
     resource_group_name   = "NP-EUS2-SAP_LIBRARY"
-    storage_account_name  = "globaeus2tfstate1c46"
+    storage_account_name  = "<tfstate_storage_account_name>"
     container_name        = "tfstate"
     key                   = "NP-EUS2-DEP00-INFRASTRUCTURE.terraform.tfstate"
     EOF
@@ -102,7 +102,7 @@ Master Branch's status: [![Build Status](https://dev.azure.com/azuresaphana/Azur
     ```bash
     cat <<EOF > backend
     resource_group_name   = "NP-EUS2-SAP_LIBRARY"
-    storage_account_name  = "globaeus2tfstate1c46"
+    storage_account_name  = "<tfstate_storage_account_name>"
     container_name        = "tfstate"
     key                   = "NP-EUS2-SAP_LIBRARY.terraform.tfstate"
     EOF
