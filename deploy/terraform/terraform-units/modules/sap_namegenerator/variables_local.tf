@@ -109,7 +109,7 @@ variable azlimits {
     afw         = 50
     rg          = 80
     kv          = 24
-    st          = 24
+    stgaccnt    = 24
     vnet        = 38
     nsg         = 80
     snet        = 80

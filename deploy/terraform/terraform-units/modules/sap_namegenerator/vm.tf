@@ -109,35 +109,35 @@ locals {
   ]
 
   //For customer who want to have an alternative name for the second IP address
-  app_computer_dnsnames = [for idx in range(var.app_server_count) :
+  app_secondary_dnsnames = [for idx in range(var.app_server_count) :
     format("%sapp%02d%s%s", lower(var.sap_sid), idx, local.app_oscode, local.random_id_vm_verified)
   ]
 
-  anchor_computer_dnsnames = [for idx in range(length(local.zones)) :
+  anchor_secondary_dnsnames = [for idx in range(length(local.zones)) :
     format("%sanchorz%s%02d%s%s", lower(var.sap_sid), local.zones[idx % max(length(local.zones), 1)], idx, local.anchor_oscode, local.random_id_vm_verified)
   ]
 
-  anydb_computer_dnsnames = [for idx in range(var.db_server_count) :
+  anydb_secondary_dnsnames = [for idx in range(var.db_server_count) :
     format("%sd%s%02dl%d%s", lower(var.sap_sid), lower(var.db_sid), idx, 0, local.random_id_vm_verified)
   ]
 
-  anydb_computer_dnsnames_ha = [for idx in range(var.db_server_count) :
+  anydb_secondary_dnsnames_ha = [for idx in range(var.db_server_count) :
     format("%sd%s%02dl%d%s", lower(var.sap_sid), lower(var.db_sid), idx, 1, local.random_id_vm_verified)
   ]
 
-  hana_computer_dnsnames = [for idx in range(var.db_server_count) :
+  hana_secondary_dnsnames = [for idx in range(var.db_server_count) :
     format("%sd%s%02dl%d%s", lower(var.sap_sid), lower(var.db_sid), idx, 0, local.random_id_vm_verified)
   ]
 
-  hana_computer_dnsnames_ha = [for idx in range(var.db_server_count) :
+  hana_secondary_dnsnames_ha = [for idx in range(var.db_server_count) :
     format("%sd%s%02dl%d%s", lower(var.sap_sid), lower(var.db_sid), idx, 1, local.random_id_vm_verified)
   ]
 
-  scs_computer_dnsnames = [for idx in range(var.scs_server_count) :
+  scs_secondary_dnsnames = [for idx in range(var.scs_server_count) :
     format("%sscs%02d%s%s", lower(var.sap_sid), idx, local.app_oscode, local.random_id_vm_verified)
   ]
 
-  web_computer_dnsnames = [for idx in range(var.web_server_count) :
+  web_secondary_dnsnames = [for idx in range(var.web_server_count) :
     format("%sweb%02d%s%s", lower(var.sap_sid), idx, local.app_oscode, local.random_id_vm_verified)
   ]
 
