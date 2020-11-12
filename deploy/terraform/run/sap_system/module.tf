@@ -67,7 +67,7 @@ module "hdb_node" {
 
 // Create Application Tier nodes
 module "app_tier" {
-  depends_on       = [module.common_infrastructure]
+  depends_on       = [module.common_infrastructure, module.hdb_node, module.anydb_node]
   source           = "../../terraform-units/modules/sap_system/app_tier"
   application      = var.application
   databases        = var.databases
