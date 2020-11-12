@@ -170,6 +170,7 @@ resource "azurerm_managed_disk" "web" {
 }
 
 resource "azurerm_virtual_machine_data_disk_attachment" "web" {
+  depends_on      = [azurerm_managed_disk.web]
   count           = local.enable_deployment ? length(azurerm_managed_disk.web) : 0
   managed_disk_id = azurerm_managed_disk.web[count.index].id
   virtual_machine_id = upper(local.web_ostype) == "LINUX" ? (

@@ -42,6 +42,7 @@ resource "azurerm_network_interface" "scs_admin" {
 
 # Associate SCS VM NICs with the Load Balancer Backend Address Pool
 resource "azurerm_network_interface_backend_address_pool_association" "scs" {
+  depends_on              = [azurerm_network_interface.scs]
   count                   = local.enable_deployment ? length(azurerm_network_interface.scs) : 0
   network_interface_id    = azurerm_network_interface.scs[count.index].id
   ip_configuration_name   = azurerm_network_interface.scs[count.index].ip_configuration[0].name
@@ -184,6 +185,7 @@ resource "azurerm_managed_disk" "scs" {
 }
 
 resource "azurerm_virtual_machine_data_disk_attachment" "scs" {
+  depends_on      = [azurerm_managed_disk.scs]
   count           = local.enable_deployment ? length(azurerm_managed_disk.scs) : 0
   managed_disk_id = azurerm_managed_disk.scs[count.index].id
   virtual_machine_id = upper(local.scs_ostype) == "LINUX" ? (

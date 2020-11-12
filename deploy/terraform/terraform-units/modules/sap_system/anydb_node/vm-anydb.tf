@@ -203,6 +203,7 @@ resource "azurerm_managed_disk" "disks" {
 
 // Manages attaching a Disk to a Virtual Machine
 resource "azurerm_virtual_machine_data_disk_attachment" "vm_disks" {
+  depends_on      = [azurerm_managed_disk.disks]
   count           = local.enable_deployment ? length(azurerm_managed_disk.disks) : 0
   managed_disk_id = azurerm_managed_disk.disks[count.index].id
   virtual_machine_id = upper(local.anydb_ostype) == "LINUX" ? (

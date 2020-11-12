@@ -184,6 +184,7 @@ resource "azurerm_lb_rule" "web" {
 
 # Associate Web dispatcher VM NICs with the Load Balancer Backend Address Pool
 resource "azurerm_network_interface_backend_address_pool_association" "web" {
+  depends_on              = [azurerm_network_interface.web]
   count                   = local.enable_deployment ? length(azurerm_network_interface.web) : 0
   network_interface_id    = azurerm_network_interface.web[count.index].id
   ip_configuration_name   = azurerm_network_interface.web[count.index].ip_configuration[0].name
